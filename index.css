@@ -16,6 +16,9 @@ body {
   header {
     height: 150px;
   }
+    header img{
+      height: 100%;
+    }
   
   main {
     min-width: 300px;
