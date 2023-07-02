@@ -81,15 +81,21 @@ body {
           background-color: #C1C272;
         }
 
+@media screen and (max-height: 600px) {
+  .main-header {
+    display: none;
+  }
+  main{
+    height: calc(100% - 110px);
+  }
+}
+
 @media screen and (max-height: 500px) {
   header{
     height: 75px;
   }
   main{
-    height: calc(100% - 140px);
-  }
-  .main-header {
-    display: none;
+    height: calc(100% - 135px);
   }
   .ul-container{
     max-height: 100%;
