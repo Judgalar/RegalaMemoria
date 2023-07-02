@@ -70,6 +70,9 @@ body {
           height: 230px;
           width: 250px;
         }
+        a img{
+          width: 150px;
+        }
   
         a:hover {
           color: #7599C5;
@@ -77,4 +80,31 @@ body {
           font-size: larger;
           background-color: #C1C272;
         }
-  
+
+@media screen and (max-height: 500px) {
+  header{
+    height: 75px;
+  }
+  main{
+    height: calc(100% - 140px);
+  }
+  .main-header {
+    display: none;
+  }
+  .ul-container{
+    max-height: 100%;
+  }
+  a{
+    height: 75px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10;
+  }
+  a img{
+    display: none;
+  }
+
+}
+        
