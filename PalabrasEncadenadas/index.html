@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Palabras Encadenadas</title>
+</head>
+
+<body style="background-color: #121212; color: ghostwhite;">
+
+  <div class="container text-center">
+    <div class="row align-items-start">
+      <div class="col">
+
+      </div>
+      <div class="col colum">
+        <br>
+        <h1><span id="current-word" style="color: lightseagreen;"></span></h1>
+        <p>
+          <h3>Ingrese una palabra que empiece por la última letra:</h3>
+        </p>
+        <form id="formulario">
+          <input type="text" id="user-word">
+          <br><br>
+          <input type="submit" class="btn btn-primary" id="submit-button">
+        </form>
+        <p id="result"></p>
+        <p>Palabras:
+          <div style="overflow: auto; background-color: white; height: 250px;">
+            <span id="words-list" style="color: green;"></span>
+          </div>
+        </p>
+      </div>
+      <div class="col">
+
+      </div>
+    </div>
+  </div>
+
+
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>

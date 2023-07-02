@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Palabras En Tiempo</title>
+
+</head>
+
+<body>
+    <div class="contenedor" id="contenedor">
+        <form id="user">
+            <input type="text" id="usuario" placeholder="Usuario">
+            <button class="btn btn-success" id="empezar" type="submit" >Empezar</button>
+        </form>
+        <div id="juego" style="display: none;">
+            <span class="bg-light rounded-circle w-40 text-center" id="tiempo"></span>
+            <div class="container bg-light contenedor rounded">
+                <form class="form-label" id="formulario">
+                    <div id="letra"></div>
+                    <input type="text" class="form-control" id="mensaje">
+                    <br><br>
+                    <button class="btn btn-dark" type="submit">Aceptar</button>
+                    <br> <br>
+                </form>
+    
+                <div id="puntos"></div>
+            </div>
+            <ul id="listaPalabras">
+                <h3>Lista de palabras</h3>
+            </ul>
+        </div>
+        <button class="btn btn-success" id="reiniciar" type="button" style="display: none;" >Reiniciar</button>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sopa de letras</title>
+
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <!-- Dependencias -->
+    <script src="jquery/jquery-3.6.4.min.js"></script>
+    <script src="js/wordfind.js"></script>
+    <script src="js/wordfindgame.js"></script>
+</head>
+
+<body>
+    <div class="juego">
+        <div id="contenedor"></div>
+        <div id="palabras-sopadeletras"></div>
+    </div>
+    <div class="botones">
+        <button class="boton" id="BTNresolver" value="Resolver sopa de letras">Resolver la Sopa</button>
+        <button class="boton" id="BTNrefresh" value="Reiniciar la sopa de letras">Nueva Sopa</button>
+    </div>
+    <h3>Número de palabras de la sopa</h3>
+    <div class="BTNnumeroPalabras">
+        <button id="1" >1</button>
+        <button id="2" >2</button>
+        <button id="3" >3</button>
+        <button id="5" >5</button>
+        <button id="10" >10</button>
+        <button id="15" >15</button>
+        <button id="20" >20</button>
+    </div>
+
+    <script type="module" src="js/script.js"></script>
+</body>
+
+</html>

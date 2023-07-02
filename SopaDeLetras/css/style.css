@@ -1,0 +1,168 @@
+*{
+    transition: 0.3s;
+}
+body {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.juego{
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+/* Contenedor de la sopa de letras */
+
+#contenedor {
+    touch-action: none;
+    min-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para cada cuadrado de la sopa de letras */
+
+#contenedor .letra {
+    height: 30px;
+    width: 30px;
+    text-transform: uppercase;
+    background-color: white;
+    border: 0;
+    font: 1em sans-serif;
+}
+
+/* Colores cuando se selecciona un cuadrado */
+
+#contenedor .selected {
+    background-color: rgb(8, 179, 2);
+}
+
+#contenedor:hover .selected:hover {
+    background-color: rgb(145, 255, 0);
+    font-weight: bold;
+}
+
+#contenedor>div>button:hover {
+    background-color: rgb(145, 255, 0);
+    font-weight: bold;
+}
+
+/* Indica que la letra es parte de una palabra que se ha encontrado */
+
+#contenedor .found {
+    background-color: lightgreen;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 2px 3px #000;
+}
+
+#contenedor .found:hover {
+    background-color: rgb(145, 255, 0);
+    font-weight: bold;
+}
+
+/* Colores de palabras no encontradas cuando se pulsa el botón Resolver sopa de letras*/
+
+#contenedor .solved {
+    border: 1px solid;
+    background-color: lightblue;
+    color: red;
+}
+
+/* Cambio de color de fondo cuando se encuentras todas las palabras*/
+
+#contenedor .complete {
+    background-color: lightgreen;
+}
+
+/**
+* Estilos para la lista de palabras
+*/
+
+#palabras-sopadeletras {
+    max-width: 500px;
+    background-color: lightblue;
+    border-radius: 20px;
+}
+
+#palabras-sopadeletras ul {
+    height: 80%;
+    padding: 20px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+#palabras-sopadeletras li {
+    font-size: 18px;
+}
+
+/*Indica que la palabra ha sido encontrada en la lista */
+
+#palabras-sopadeletras .palabraEncontrada {
+    text-decoration: line-through;
+    color: rgb(255, 0, 0);
+}
+
+/**
+*  Estilos botón
+*/
+
+.BTNnumeroPalabras{
+    display: flex;
+    gap: 20px;
+}
+.BTNnumeroPalabras button{
+    font-size: 20px;
+    color: white;
+    background-color: lightseagreen;
+    border: none;
+    border-radius: 30px;
+    padding: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.BTNnumeroPalabras button:hover{
+    background-color: rgb(13, 247, 235) ;
+}
+
+#BTNrefresh {
+    font-size: 20px;
+    color: white;
+    background-color: #0593da;
+    border: none;
+    border-radius: 30px;
+    padding: 20px;
+    transition: 0.4s;
+}
+#BTNrefresh:hover {
+    border-radius: 10px;
+    background-color: #0979b0;
+}
+
+#BTNresolver {
+    font-size: 20px;
+    color: white;
+    background-color: #ff9800;
+    border: none;
+    border-radius: 30px;
+    padding: 20px;
+    transition: 0.4s;
+}
+#BTNresolver:hover {
+    border-radius: 10px;
+    background-color: #fca626;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorama</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <br>
+    <article class="row" style="width: 100%;">
+        <div class="col-2">
+            <center><h4>INTENTO</h4></center>
+            <center><label id="intentos"></label></center>
+            <center><h4>PAREJAS</h4></center>
+            <center><label id="parejas"></label></center>
+            <center><div id="acabado"></center>
+        </div>
+        <div class="col-8 tablero" id="tablero">
+            <div class="row fila">
+                <button class="col-3" id="0" onclick="vuelta(this.id)">
+                    <img src="img/question.png" alt="">
+                </button>
+                <button class="col-3" id="1" onclick="vuelta(this.id)">
+                    <img src="img/question.png" alt="">
+                </button>
+                <button class="col-3" id="2" onclick="vuelta(this.id)">
+                    <img src="img/question.png" alt="">
+                </button>
+                <button class="col-3" id="3" onclick="vuelta(this.id)">
+                    <img src="img/question.png" alt="">
+                </button>
+            </div><br>
+            <div class="row fila">
+                <button class="col-3" id="4" onclick="vuelta(this.id)">
+                    <img src="img/question.png" alt="">
+                </button>
+                <button class="col-3" id="5" onclick="vuelta(this.id)">
+                    <img src="img/question.png" alt="">
+                </button>
+                <button class="col-3" id="6" onclick="vuelta(this.id)">
+                    <img src="img/question.png" alt="">
+                </button>
+                <button class="col-3" id="7" onclick="vuelta(this.id)">
+                    <img src="img/question.png" alt="">
+                </button>
+            </div><br>
+            <div class="row fila">
+                <button class="col-3" id="8" onclick="vuelta(this.id)">
+                    <img src="img/question.png" alt="">
+                </button>
+                <button class="col-3" id="9" onclick="vuelta(this.id)">
+                    <img src="img/question.png" alt="">
+                </button>
+                <button class="col-3" id="10" onclick="vuelta(this.id)">
+                    <img src="img/question.png" alt="">
+                </button>
+                <button class="col-3" id="11" onclick="vuelta(this.id)">
+                    <img src="img/question.png" alt="">
+                </button>
+            </div>
+        </div>
+        <div class="col-2">
+            <center><button class="btn btn-dark" onclick="reiniciar()">REINICIAR</button></center>
+            <br><br>
+            <center><h4>RECORD</h4></center>
+            <center><label id="record"></label></center>
+        </div>
+    </article>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="finishModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terminado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="img/tick.png" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="reiniciar()">Jugar de nuevo</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        i{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <div class="container align-middle" id="contenedor">
+        <div style="gap: 50px;">
+            <center><h1 id="titulo">Pincha en</h1></center>
+            <center><span id="buscar"></span></center>
+        </div>
+        <br><br>
+        <table class="table">
+            <tr>
+                <td id="0"></td>
+                <td id="1"></td>
+                <td id="2"></td>
+                <td id="3"></td>
+                <td id="4"></td>
+            </tr>
+            <tr>
+                <td id="5"></td>
+                <td id="6"></td>
+                <td id="7"></td>
+                <td id="8"></td>
+                <td id="9"></td>
+            </tr>
+            <tr>
+                <td id="10"></td>
+                <td id="11"></td>
+                <td id="12"></td>
+                <td id="13"></td>
+                <td id="14"></td>
+            </tr>
+            <tr>
+                <td id="15"></td>
+                <td id="16"></td>
+                <td id="17"></td>
+                <td id="18"></td>
+                <td id="19"></td>
+            </tr>
+            <tr>
+                <td id="20"></td>
+                <td id="21"></td>
+                <td id="22"></td>
+                <td id="23"></td>
+                <td id="24"></td>
+            </tr>
+        </table>
+    </div>
+
+    
+</body>
+<script>
+    'use strict'
+
+    function generateRandomColors() {
+        let colors = [];
+        let possibleColors = ["blue", "orange", "violet"];
+        for (let i = 0; i <= 25; i++) {
+            let randomIndex = Math.floor(Math.random() * possibleColors.length);
+            let color = possibleColors[randomIndex];
+            colors.push(color);
+        }
+        return colors;
+    }
+
+    function tablero(){
+        terminado = false;
+        document.getElementById("titulo").innerHTML = "Pincha en";
+        
+        colores = generateRandomColors();
+        for( let i = 0; i <= 25 ; i++){
+            let simbolo = Math.floor(Math.random() * 4);
+            matriz[i] = simbolo+colores[i];
+        }
+        solucion = matriz.shift();
+        if(matriz.includes(solucion) == false) tablero();
+
+        switch (solucion) {
+                case '0violet':
+                    document.getElementById("buscar").innerHTML = '<i style="font-size: 4vw; color: violet" class="bi bi-square-fill"></i>';
+                    break;
+                case '0blue':
+                    document.getElementById("buscar").innerHTML = '<i style="font-size: 4vw; color: blue;" class="bi bi-square-fill"></i>';
+                    break;
+                case '0orange':
+                    document.getElementById("buscar").innerHTML = '<i style="font-size: 4vw; color: orange" class="bi bi-square-fill"></i>';
+                    break;
+                case '1violet':
+                    document.getElementById("buscar").innerHTML = '<i style="font-size: 4vw; color: violet" class="bi bi-star-fill"></i>';
+                    break;
+                case '1blue':
+                    document.getElementById("buscar").innerHTML = '<i style="font-size: 4vw; color: blue;" class="bi bi-star-fill"></i>';
+                    break;
+                case '1orange':
+                    document.getElementById("buscar").innerHTML = '<i style="font-size: 4vw; color: orange" class="bi bi-star-fill"></i>';
+                    break;
+                case '2violet':
+                    document.getElementById("buscar").innerHTML = '<i style="font-size: 4vw; color: violet" class="bi bi-circle-fill"></i>';
+                    break;
+                case '2blue':
+                    document.getElementById("buscar").innerHTML = '<i style="font-size: 4vw; color: blue;" class="bi bi-circle-fill"></i>';
+                    break;
+                case '2orange':
+                    document.getElementById("buscar").innerHTML = '<i style="font-size: 4vw; color: orange" class="bi bi-circle-fill"></i>';
+                    break;
+                case '3violet':
+                    document.getElementById("buscar").innerHTML = '<i style="font-size: 4vw; color: violet" class="bi bi-triangle-fill"></i>';
+                    break;
+                case '3blue':
+                    document.getElementById("buscar").innerHTML = '<i style="font-size: 4vw; color: blue;" class="bi bi-triangle-fill"></i>';
+                    break;
+                case '3orange':
+                    document.getElementById("buscar").innerHTML = '<i style="font-size: 4vw; color: orange" class="bi bi-triangle-fill"></i>';
+                    break;
+            }
+        for( let i = 0; i <= 24 ; i++){
+            switch (matriz[i]) {
+                case '0violet':
+                    document.getElementById(i).innerHTML = '<div onclick="comprobar(parentElement.id)"><i style="font-size: 4vw; color: violet" class="bi bi-square-fill"></i></div>';
+                    break;
+                case '0blue':
+                    document.getElementById(i).innerHTML = '<div onclick="comprobar(parentElement.id)"><i style="font-size: 4vw; color: blue;" class="bi bi-square-fill"></i></div>';
+                    break;
+                case '0orange':
+                    document.getElementById(i).innerHTML = '<div onclick="comprobar(parentElement.id)"><i style="font-size: 4vw; color: orange" class="bi bi-square-fill"></i></div>';
+                    break;
+                case '1violet':
+                    document.getElementById(i).innerHTML = '<div onclick="comprobar(parentElement.id)"><i style="font-size: 4vw; color: violet" class="bi bi-star-fill"></i></div>';
+                    break;
+                case '1blue':
+                    document.getElementById(i).innerHTML = '<div onclick="comprobar(parentElement.id)"><i style="font-size: 4vw; color: blue;" class="bi bi-star-fill"></i></div>';
+                    break;
+                case '1orange':
+                    document.getElementById(i).innerHTML = '<div onclick="comprobar(parentElement.id)"><i style="font-size: 4vw; color: orange" class="bi bi-star-fill"></i></div>';
+                    break;
+                case '2violet':
+                    document.getElementById(i).innerHTML = '<div onclick="comprobar(parentElement.id)"><i style="font-size: 4vw; color: violet" class="bi bi-circle-fill"></i></div>';
+                    break;
+                case '2blue':
+                    document.getElementById(i).innerHTML = '<div onclick="comprobar(parentElement.id)"><i style="font-size: 4vw; color: blue;" class="bi bi-circle-fill"></i></div>';
+                    break;
+                case '2orange':
+                    document.getElementById(i).innerHTML = '<div onclick="comprobar(parentElement.id)"><i style="font-size: 4vw; color: orange" class="bi bi-circle-fill"></i></div>';
+                    break;
+                case '3violet':
+                    document.getElementById(i).innerHTML = '<div onclick="comprobar(parentElement.id)"><i style="font-size: 4vw; color: violet" class="bi bi-triangle-fill"></i></div>';
+                    break;
+                case '3blue':
+                    document.getElementById(i).innerHTML = '<div onclick="comprobar(parentElement.id)"><i style="font-size: 4vw; color: blue;" class="bi bi-triangle-fill"></i></div>';
+                    break;
+                case '3orange':
+                    document.getElementById(i).innerHTML = '<div onclick="comprobar(parentElement.id)"><i style="font-size: 4vw; color: orange" class="bi bi-triangle-fill"></i></div>';
+                    break;
+            }
+        }
+    }
+
+    function comprobar( id ){
+        while(terminado == false){
+            let bool;
+            if ( matriz[id] == solucion ) bool = true;
+            else bool = false;
+
+            if(bool == true){
+                document.getElementById(id).innerHTML = '<i style="font-size: 4vw; color: green;" class="bi bi-check-square"></i>';
+                matriz[id] = "true";
+                for(let i = 0; i<=24 ; i++){
+                    if( matriz[i] == solucion ){
+                        return false;
+                    }
+                    else if( (i == 24) && ( matriz[24] != solucion ) ){
+                        terminado = true;
+                        document.getElementById("titulo").innerHTML = '<center><h1 style="color: green;">Completado</h1></center>';
+                        document.getElementById("titulo").innerHTML += '<button class="btn btn-success" onclick="tablero()" >Continuar</button>';
+                    }
+                }
+            }
+            else{
+                terminado = true;
+                document.getElementById(id).innerHTML = '<i style="font-size: 4vw; color: red;" class="bi bi-x-square-fill"></i>' ;
+                document.getElementById("titulo").innerHTML = '<center><h1 style="color: red;">Has Fallado</h1></center>';
+                document.getElementById("titulo").innerHTML += '<button class="btn btn-danger" onclick="tablero()" >Continuar</button>';
+            }
+        } 
+    }
+    
+    let matriz = [];
+    let colores = [];
+    let solucion = [];
+    let terminado = false;
+    tablero();
+    
+</script>
+</html>

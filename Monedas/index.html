@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="bootstrap/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Seleccionador de Billetes y Monedas</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Elige los Billetes y Monedas correctos</h1>
+    <p>El precio del objeto que deseas comprar es <b><span id="price" class="bg bg-warning rounded-top rounded-bottom rounded-right rounded-left pt-2 pb-2" style="padding: 20px; color: black;"></span></b>.</p>
+    <p>Selecciona las monedas y billetes que deseas utilizar:</p>
+    <div class="money-options">
+      <div class="money-option">
+        <img src="img/1cent.png" alt="1 Céntimo" data-value="0.01">
+        <span>1 Céntimo</span>
+      </div>
+      <div class="money-option">
+        <img src="img/2cent.png" alt="2 Céntimos" data-value="0.02">
+        <span>2 Céntimos</span>
+      </div>
+      <div class="money-option">
+        <img src="img/5cent.png" alt="5 Céntimos" data-value="0.05">
+        <span>5 Céntimos</span>
+      </div>
+      <div class="money-option">
+        <img src="img/10cent.png" alt="10 Céntimos" data-value="0.1">
+        <span>10 Céntimos</span>
+      </div>
+      <div class="money-option">
+        <img src="img/20cent.png" alt="20 Céntimos" data-value="0.2">
+        <span>20 Céntimos</span>
+      </div>
+      <div class="money-option">
+        <img src="img/50cent.png" alt="50 Céntimos" data-value="0.5">
+        <span>50 Céntimos</span>
+      </div>
+      <div class="money-option">
+        <img src="img/1euro.png" alt="1 Euro" data-value="1">
+        <span>1 Euro</span>
+      </div>
+      <div class="money-option">
+        <img src="img/2euros.png" alt="2 Euros" data-value="2">
+        <span>2 Euros</span>
+      </div>
+      <div class="money-option">
+        <img src="img/5euros.png" alt="5 Euros" data-value="5">
+        <span>5 Euros</span>
+      </div>
+      <div class="money-option">
+        <img src="img/10euros.png" alt="10 Euros" data-value="10">
+        <span>10 Euros</span>
+      </div>
+      <div class="money-option">
+        <img src="img/20euros.png" alt="20 Euros" data-value="20">
+        <span>20 Euros</span>
+      </div>
+      <div class="money-option">
+        <img src="img/50euros.png" alt="50 Euros" data-value="50">
+        <span>50 Euros</span>
+      </div>
+      <div class="money-option">
+        <img src="img/100euros.png" alt="100 Euros" data-value="100">
+        <span>100 Euros</span>
+      </div>
+      <div class="money-option">
+        <img src="img/500euros.png" alt="500 Euros" data-value="500">
+        <span>500 Euros</span>
+      </div>
+    </div>
+    <div class="selected-money">
+      <p>Has seleccionado:</p>
+      <ul id="selected-money-list"></ul>
+      <center><span id="total-selected-money">0</span></center>
+      <br><br>
+      <div id="check-result1" style="text-align: center; font-size: 24px; background-color: green;"></div>
+      <div id="check-result2" style="text-align: center; font-size: 24px; background-color: red;"></div>
+    </div>
+
+    
+
+    <center>
+      <div class="md-4 sm-12">
+        <div class="btn btn-danger mb-5">
+          <div id="clear-price" style="padding: 15px;">Empezar de nuevo</div>
+        </div>
+
+        <div class="btn btn-success mb-5" style="padding: 20px;">
+          <div id="check-price-btn">Comprobar</div>
+        </div>
+
+        <div class="btn mb-5">
+          <div id="reloadBtn" style="padding: 20px;">Siguiente</div>
+        </div>
+        
+      </div>
+    </center>
+
+    
+    <script src="script.js"></script>
+  </body>
+</html>
