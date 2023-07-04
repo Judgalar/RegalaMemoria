@@ -60,6 +60,8 @@ function checkAnswer()
 
             if(secs > 0)
             {
+                respuesta.value = ''
+                displayFruit();
                 clearInterval(id);
                 toggleElement();
             }
@@ -67,9 +69,7 @@ function checkAnswer()
         }, 1000);
 
         indiceFruta++;
-        respuesta.value = ''
-
-        displayFruit();
+        
     } 
 }
 
