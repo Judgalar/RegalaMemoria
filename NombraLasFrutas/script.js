@@ -2,75 +2,101 @@
 
 let score = 0;
 let currentFruit = "";
-let fruits = ["manzana", "platano", "naranja", "pera", "fresa", "aguacate", "arandanos", "cereza", "coco", "kiwi", "limon", "mango", "melocoton", "pina", "sandia", "uva", "melon", "frambuesa", "granada", "pomelo"];
+const fruits = ["manzana", "platano", "naranja", "pera", "fresa", "aguacate", "arandano", "cereza", "coco", "kiwi", "limon", "mango", "melocoton", "pina", "sandia", "uva", "melon", "frambuesa", "granada", "pomelo"];
 
 const removeAccents = (str) => {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 } 
 
-function displayFruit()
-{
-    let randomIndex = Math.floor(Math.random() * fruits.length);
+function toggleElement() {
+    const element = document.getElementById('message-container');
+    element.classList.toggle('show');
+}
+  
 
+function displayFruit(){
+    if(indiceFruta < fruits.length){
+        currentFruit = fruits[indiceFruta];
+        document.getElementById("fruit-image").src = "frutas/" + currentFruit + ".svg";
+        console.log(fruits[indiceFruta])
+    }
+    else displayRandomFruit()
+}
+function displayRandomFruit() {
+    let randomIndex;
+  
+    do {    
+      randomIndex = Math.floor(Math.random() * fruits.length);
+    } while (arrayLastFruitsAppeared.includes(randomIndex));
+  
+    arrayLastFruitsAppeared.push(randomIndex);
+  
+    if (arrayLastFruitsAppeared.length > 14) {
+      arrayLastFruitsAppeared.shift();
+    }
+  
     currentFruit = fruits[randomIndex];
 
-    document.getElementById("fruit-image").src = "frutas/" + currentFruit + ".png";
-}
+    console.log(arrayLastFruitsAppeared)
+  
+    document.getElementById("fruit-image").src = "frutas/" + currentFruit + ".svg";
+  }
+  
 
 function checkAnswer()
 {
-    let userAnswer = document.getElementById("user-answer").value.toLocaleLowerCase();
+    let userAnswer = input.value.toLocaleLowerCase();
     userAnswer = removeAccents(userAnswer);
 
     if (userAnswer === currentFruit) 
     {
-        score++;
+        toggleElement();
 
-        document.getElementById("score").innerHTML = "Puntuación: " + score;
+        let secs = 0;
 
-        let acierto = document.getElementById("correcto");
-
-        acierto.hidden = false;
-
-        var secs = 0;
-
-        var id = setInterval(function()
+        const id = setInterval(function()
         { 
-            secs++; console.log(secs);
+            ++secs;
 
-            if(secs > 2)
+            if(secs > 0)
             {
                 clearInterval(id);
-
-                acierto.hidden = true;
+                toggleElement();
             }
             
         }, 1000);
 
+        indiceFruta++;
+        respuesta.value = ''
+
         displayFruit();
     } 
-    else 
-    {
-        let acierto = document.getElementById("incorrecto");
-
-        acierto.hidden = false;
-
-        var secs = 0;
-
-        var id = setInterval(function()
-        { 
-            secs++; console.log(secs);
-
-            if(secs > 2)
-            {
-                clearInterval(id);
-
-                acierto.hidden = true;
-            }
-
-        }, 1000);
-    }
 }
 
-window.onload = displayFruit()
+const form = document.getElementById('formulario')
+form.addEventListener ('input', (e)=>{
+    e.preventDefault();
+    checkAnswer();
+})
+form.addEventListener('submit', (e) => e.preventDefault() )
 
+const input = document.getElementById('respuesta');
+
+document.addEventListener('click', function(event) {
+  // Verificar si el clic se realizó fuera del input
+  if (event.target !== input) {
+    // Volver a enfocar el input
+    input.focus();
+  }
+});
+
+
+let indiceFruta = 0;
+let arrayLastFruitsAppeared = [];
+
+
+
+window.onload = ()=>{
+    displayFruit()
+    input.focus()
+}

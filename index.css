@@ -71,7 +71,7 @@ body {
           width: 250px;
         }
         a img{
-          width: 150px;
+          width: 100%;
         }
   
         a:hover {
